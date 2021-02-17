@@ -1,0 +1,31 @@
+.Navigation {
+  background: rgb(0, 0, 255);
+  background: -moz-linear-gradient(
+    90deg,
+    rgba(0, 0, 255, 1) 16%,
+    rgba(135, 135, 255, 1) 31%,
+    rgba(255, 255, 255, 1) 56%
+  );
+  background: -webkit-linear-gradient(
+    90deg,
+    rgba(0, 0, 255, 1) 16%,
+    rgba(135, 135, 255, 1) 31%,
+    rgba(255, 255, 255, 1) 56%
+  );
+  background: linear-gradient(
+    90deg,
+    rgba(0, 0, 255, 1) 16%,
+    rgba(135, 135, 255, 1) 31%,
+    rgba(255, 255, 255, 1) 56%
+  );
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#0000ff",endColorstr="#ffffff",GradientType=1);
+}
+
+.Navigation-Brand {
+  color: white;
+  font-size: 24px;
+}
+
+.Navigation-Brand:hover {
+  color: white !important;
+}

@@ -1,11 +1,22 @@
-import React from 'react'
+import React from 'react';
+import { NavLink } from 'react-router-dom';
+import {Navbar, Nav, NavbarBrand, NavItem} from 'reactstrap';
+import './Navigation.css'
 
-function Navbar() {
+function Navigation() {
   return (
-    <div>
-      
+    <div className="Navigation">
+      <Navbar>
+        <NavbarBrand href="/" className="Navigation-Brand">BugTracker</NavbarBrand>
+        <Nav>
+          <NavItem>
+            <NavLink to="/profile">Profile</NavLink>
+          </NavItem>
+        </Nav>  
+      </Navbar>
+      <hr/>
     </div>
   )
 }
 
-export default Navbar
+export default Navigation
