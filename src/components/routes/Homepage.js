@@ -1,10 +1,11 @@
 import React from 'react';
-import {Table} from 'reactstrap'
+import {Table} from 'reactstrap';
+import {Link} from 'react-router-dom';
 
 function Homepage() {
   return (
     <div className="mx-5">
-      <h1>This is the homepage</h1>
+      <h3>Current Open Issues: </h3>
       <Table bordered >
         <thead>
           <tr>
@@ -16,7 +17,7 @@ function Homepage() {
         </thead>
         <tbody>
           <tr>
-            <td>RFN1254862</td>
+            <td><Link to={`/bugs/RFN1254862`}>RFN1254862</Link></td>
             <td>Associate can't log in</td>
             <td>02/01/2021</td>
             <td>Low</td>
