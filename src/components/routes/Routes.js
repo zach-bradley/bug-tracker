@@ -11,7 +11,7 @@ function Routes() {
       <Route exact path="/">
         <Homepage />
       </Route>
-      <Route path="/bugs/:id">
+      <Route path="/bugs/:bugId">
         <BugResolve />
       </Route>
       <Route exact path="/profile">

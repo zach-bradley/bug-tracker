@@ -1,45 +1,22 @@
 import React from 'react';
 import {Table} from 'reactstrap';
-import {Link} from 'react-router-dom';
+import TableHead from '../misc/TableHead';
+import { useSelector } from 'react-redux';
+import TableRow from '../misc/TableRow';
 
 function Homepage() {
+  const bugs = useSelector(st => Object.values(st.bugs))
+  if(!bugs) return <h1>Loading</h1>;
+
   return (
     <div className="mx-5">
       <h3>Current Open Issues: </h3>
       <Table bordered >
         <thead>
-          <tr>
-            <th>Reference Number</th>
-            <th>Description</th>
-            <th>Date Submitted</th>
-            <th>Priority</th>
-          </tr>
+          <TableHead headers={["Reference Number", "Description", "Date Submitted", "Priority"]} />
         </thead>
         <tbody>
-          <tr>
-            <td><Link to={`/bugs/RFN1254862`}>RFN1254862</Link></td>
-            <td>Associate can't log in</td>
-            <td>02/01/2021</td>
-            <td>Low</td>
-          </tr>
-          <tr>
-            <td>RFN1254862</td>
-            <td>Associate can't log in</td>
-            <td>02/01/2021</td>
-            <td>Low</td>
-          </tr>
-          <tr>
-            <td>RFN1254862</td>
-            <td>Associate can't log in</td>
-            <td>02/01/2021</td>
-            <td>Low</td>
-          </tr>
-          <tr>
-            <td>RFN1254862</td>
-            <td>Associate can't log in</td>
-            <td>02/01/2021</td>
-            <td>Low</td>
-          </tr>
+          {bugs.map(bug => <TableRow key={bug.id} id={bug.id} desc={bug.desc} date={bug.date}  priority={bug.priority}/>)}   
         </tbody>
       </Table>
     </div>
